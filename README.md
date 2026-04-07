@@ -6,14 +6,11 @@ AI-powered travel planner that generates, saves, and refines personalized trip i
 
 ### Main interface
 <img width="1335" height="970" alt="Снимок экрана 2026-04-07 163935" src="https://github.com/user-attachments/assets/6b0883a8-be2b-4c8c-92ca-055d90290989" />
-<img width="1335" height="970" alt="Снимок экрана 2026-04-07 163935" src="https://github.com/user-attachments/assets/6b0883a8-be2b-4c8c-92ca-055d90290989" />
 
 ### Generated trip
 <img width="667" height="954" alt="Снимок экрана 2026-04-07 164100" src="https://github.com/user-attachments/assets/50922a1d-17bd-4632-af66-16da314fcc0e" />
-<img width="667" height="954" alt="Снимок экрана 2026-04-07 164100" src="https://github.com/user-attachments/assets/50922a1d-17bd-4632-af66-16da314fcc0e" />
 
 ### The ability to regenerate
-<img width="649" height="948" alt="Снимок экрана 2026-04-07 164119" src="https://github.com/user-attachments/assets/b7aa7dba-77cd-4cac-b434-4741e52baf11" />
 <img width="649" height="948" alt="Снимок экрана 2026-04-07 164119" src="https://github.com/user-attachments/assets/b7aa7dba-77cd-4cac-b434-4741e52baf11" />
 
 ## Product context
