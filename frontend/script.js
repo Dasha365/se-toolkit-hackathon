@@ -58,6 +58,37 @@ function createMetaPill(label, value) {
     `;
 }
 
+function normalizeTextValue(value) {
+    return String(value ?? "").trim();
+}
+
+function valuesMatch(left, right) {
+    return normalizeTextValue(left).toLowerCase() === normalizeTextValue(right).toLowerCase();
+}
+
+function getDisplayTravelStyle(trip) {
+    const styleCandidates = [
+        trip.travel_style,
+        trip.style,
+        trip.travelStyle,
+        trip.preferences?.travel_style,
+    ];
+
+    for (const candidate of styleCandidates) {
+        const normalizedCandidate = normalizeTextValue(candidate);
+
+        if (!normalizedCandidate) {
+            continue;
+        }
+
+        if (!valuesMatch(normalizedCandidate, trip.destination)) {
+            return normalizedCandidate;
+        }
+    }
+
+    return "Not specified";
+}
+
 function splitPlanIntoSegments(plan) {
     const text = String(plan ?? "").trim();
 
@@ -205,13 +236,14 @@ function renderHistory(trips) {
 
 function renderTripDetail(trip) {
     selectedTripId = trip.id;
+    const displayTravelStyle = getDisplayTravelStyle(trip);
 
     const detailMeta = [
         createMetaPill("Destination", trip.destination),
         createMetaPill("Duration", `${trip.number_of_days} day${trip.number_of_days === 1 ? "" : "s"}`),
         createMetaPill("Budget", trip.budget),
         createMetaPill("Interests", trip.interests),
-        createMetaPill("Style", trip.travel_style),
+        createMetaPill("Style", displayTravelStyle),
     ].join("");
 
     const notesText = escapeHtml(trip.notes || "No additional notes were saved for this itinerary.").replace(/\n/g, "<br>");
